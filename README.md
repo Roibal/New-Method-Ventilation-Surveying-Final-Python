@@ -20,4 +20,3 @@ Two Raspberry Pi Sense Hat Data Collection Units were set to measure data during
 
 
 Copyright (c) 2016 Joaquin Roibal
-MIT License

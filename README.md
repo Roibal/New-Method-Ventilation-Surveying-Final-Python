@@ -1,5 +1,7 @@
 # Data Analysis of New Method of Ventilation Surveying in Underground Mining
 
+Wiki providing background, introduction, description available here: https://github.com/Roibal/New-Method-Ventilation-Surveying-Final-Python/wiki#welcome-to-the-ventilation-engineering-python-program-project-wiki
+
 **Introduction**
 
 Two data collection units consisting of consumer-grade micro-computers , batteries and python script to collect data and format to a csv format file were used to record data while performing a typical mine ventilation survey. The purpose of this experiment was to evaluate the methodology of digital data collection units to be used in the underground mining environment. 

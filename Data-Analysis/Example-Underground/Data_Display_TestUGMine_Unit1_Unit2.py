@@ -12,8 +12,8 @@ an underground mining operation
 
 Created by: Joaquin Roibal
 
-Copyright 2016 (c) Joaquin Roibal
-All Rights Reserved
+Copyright (c) 2016 Joaquin Roibal
+MIT License
 November 28, 2016
 
 """

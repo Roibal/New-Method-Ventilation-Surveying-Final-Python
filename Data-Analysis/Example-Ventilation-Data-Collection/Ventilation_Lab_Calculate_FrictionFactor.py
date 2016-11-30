@@ -13,7 +13,7 @@ MIT License
 
 def main():
     """
-    Lab 2 requires the calculation of friction factors for a ventilation network.
+    A Ventilation Lab requires the calculation of friction factors for a ventilation network.
     This code will utilize a previously developed ventilation analysis toolbox.
     """
     #Initialize values for network include length & diameter

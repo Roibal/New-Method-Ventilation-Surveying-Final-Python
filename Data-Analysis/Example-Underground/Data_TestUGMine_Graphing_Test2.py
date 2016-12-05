@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 import csv
 import datetime 
+import numpy as np
 
 """
-The Purpose of "Data_TestUGMine_Graphing_Test.py" 
+The Purpose of "Data_TestUGMine_Graphing_Test2.py" 
 is to load data and display data collected by the two data collection 
 units (raspberry pi & sense Hat) for the purpose of ventilation engineering. 
 
@@ -12,13 +13,13 @@ program by increasing the number of functions (load data, graph data)
 to allow easier changing of variables.
 
 The Data collected in this example was collected over a period of two days at
-an underground mining operation 
+an underground mining operation. Includes Scatter Plot of Temp-Humidity and Temp-Pressure.
 
 Created by: Joaquin Roibal
 
 Copyright (c) 2016 Joaquin Roibal
 MIT License
-December 1, 2016
+December 4, 2016
 
 """
 
@@ -157,18 +158,44 @@ def autoplotting(num_list, datetime_list, temp_list, press_list, humidity_list):
         plt.plot(datetime_list[i], temp_list[i], label = 'Temperature JR1')
         plt.plot(datetime_list[i+1], temp_list[i+1], label = 'Temperature JR2')
         plt.title('Temperature Comparison\n Time Period: ' +str(datetime_list[i][0])+ ' - ' +str(datetime_list[i][-1]))
+        plt.xlabel('Time')
+        plt.ylabel('Temperature')
         legend = plt.legend(loc='upper right', shadow=True, fontsize='x-large')
         plt.show()
 
         plt.plot(datetime_list[i], press_list[i], label = 'Pressure JR1')
         plt.plot(datetime_list[i+1], press_list[i+1], label = 'Pressure JR2')
         plt.title('Pressure Comparison\n Time Period: ' +str(datetime_list[i][0])+ ' - ' +str(datetime_list[i][-1]))
+        plt.xlabel('Time')
+        plt.ylabel('Pressure')
         legend = plt.legend(loc='upper right', shadow=True, fontsize='x-large')
         plt.show()
 
         plt.plot(datetime_list[i], humidity_list[i], label = 'Humidity JR1')
         plt.plot(datetime_list[i+1], humidity_list[i+1], label = 'Humidity JR2')
         plt.title('Humidity Comparison\n Time Period: ' +str(datetime_list[i][0])+ ' - ' +str(datetime_list[i][-1]))
+        plt.xlabel('Time')
+        plt.ylabel('Humidity')
+        legend = plt.legend(loc='upper right', shadow=True, fontsize='x-large')
+        plt.show()
+
+        #colors = [j for j in range(0,len(temp_list[i]))]
+        #print(colors)
+        #plt.scatter(temp_list[i], humidity_list[i], c=colors, label = 'Temp/Press')
+
+        plt.scatter(temp_list[i], humidity_list[i], c='r', label = 'Temp/Humidity JR1')
+        plt.scatter(temp_list[i+1], humidity_list[i+1], c='g', label = 'Temp/Humidity JR2')
+        plt.title('Temperature - Humidity Scatter Plot\n Time Period: ' + str(datetime_list[i][0])+ ' - ' +str(datetime_list[i][-1]))
+        plt.ylabel('Relative Humidity %')
+        plt.xlabel('Temperature (Celsius)')
+        legend = plt.legend(loc='upper right', shadow=True, fontsize='x-large')
+        plt.show()
+
+        plt.scatter(press_list[i], temp_list[i], c='r', label = 'Temp/Press JR1')
+        plt.scatter(press_list[i+1], temp_list[i+1], c='g', label = 'Temp/Press JR2')
+        plt.title('Temperature - Pressure Scatter Plot\n Time Period: ' + str(datetime_list[i][0])+ ' - ' +str(datetime_list[i][-1]))
+        plt.ylabel('Temperature(Celsius)')
+        plt.xlabel('Pressure(kPa)')
         legend = plt.legend(loc='upper right', shadow=True, fontsize='x-large')
         plt.show()
 
